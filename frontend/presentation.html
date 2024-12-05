@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Argument For Uniforms</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1b1f32;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            padding: 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+            margin-bottom: 50px;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out; /* Smoother and longer opacity transition */
+        }
+        .container.active {
+            opacity: 1;
+        }
+        .content {
+            width: 45%;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .argument {
+            margin-bottom: 20px;
+        }
+        .argument-number {
+            display: inline-block;
+            background-color: #3443a5;
+            color: white;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        #first {
+            border-radius: 10px;
+        }
+        .img {
+            width: 45%;
+            border-radius: 10px;
+        }
+        button {
+            background-color: #3443a5;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+            border-radius: 7px;
+        }
+        button:hover {
+            background-color: #2a3499;
+        }
+    </style>
+</head>
+<body>
+    <video autoplay loop muted style="position: fixed; top: 0; left: 0; width: 100%; height: 100%;">
+        <source src="../src/1205/1205-1.mp4" type="video/mp4">
+        Ваш браузер не підтримує відео.
+      </video>
+    <div class="container active">
+        <img id="first" src="../secondary-schools-banner-02-1920x1080_a046bbb7-c63b-4eb3-a773-019fa969a21a_600x.jpg" alt="Students in Uniforms">
+        <div class="content">
+            <h1>Uniform <span style="color: rgb(253, 23, 23);">are</span> mandatory</h1>
+            <div class="argument">
+                <div class="argument-number">1</div>
+                <div class="argument-text">
+                    <strong>Discipline</strong><br>
+                    The atmosphere is extremely harsh
+                </div>
+            </div>
+            <div class="argument">
+                <div class="argument-number">2</div>
+                <div class="argument-text">
+                    <strong>Uncomfortable</strong><br>
+                    You should wear the uniform everyday.
+                </div>
+            </div>
+            <div class="argument">
+                <div class="argument-number">3</div>
+                <div class="argument-text">
+                    <strong>Creative spark</strong><br>
+                    You can't wear whatever you want
+                </div>
+            </div>
+            <button onclick="nextContainer()">Next</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <img class="img" src="../_13f60c0e-32fd-4f7c-a6cf-91e42b70c86d.jpeg" alt="Students in Uniforms">
+        <div class="content">
+            <h1>Uniform <span style="color: rgb(119, 253, 23);">are not</span> mandatory</h1>
+            <div class="argument">
+                <div class="argument-number">1</div>
+                <div class="argument-text">
+                    <strong>Comfortable</strong><br>
+                    You should wear the uniform everyday
+                </div>
+            </div>he teachers have to 
+            <div class="argument">
+                <div class="argument-number">2</div>
+                <div class="argument-text">
+                    <strong>Freedom</strong><br>
+                    You can wear whatever you want
+                </div>
+            </div>
+            <div class="argument">
+                <div class="argument-number">3</div>
+                <div class="argument-text">
+                    <strong>Teachers</strong><br>
+                    If school decide to cancel uniform. The teachers should not start conflicts 
+                </div>
+            </div>
+            <button onclick="nextContainer()">Next</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <img class="img" src="../3hsrgrDn-7fxdLFFns6ms.jpg" alt="Students in Uniforms">
+        <div class="content">
+            <h1>Uniforms at school competitions</h1>
+            <div class="argument">
+                <div class="argument-number">1</div>
+                <div class="argument-text">
+                    <strong>Unity</strong><br>
+                    Unity between students
+                </div>
+            </div>
+            <div class="argument">
+                <div class="argument-number">2</div>
+                <div class="argument-text">
+                    <strong>Brand</strong><br>
+                    The school popularizes itself
+                </div>
+            </div>
+            <button onclick="firstContainer()">Start</button> <!-- Start button on the last container -->
+        </div>
+    </div>
+
+    <script>
+        let currentContainer = 0;
+        const containers = document.querySelectorAll('.container');
+
+        // Smooth scroll helper function with custom duration
+        function smoothScroll(target, duration) {
+            const targetPosition = target.getBoundingClientRect().top;
+            const startPosition = window.pageYOffset;
+            let startTime = null;
+
+            function animation(currentTime) {
+                if (startTime === null) startTime = currentTime;
+                const timeElapsed = currentTime - startTime;
+                const run = ease(timeElapsed, startPosition, targetPosition, duration);
+                window.scrollTo(0, run);
+                if (timeElapsed < duration) requestAnimationFrame(animation);
+            }
+
+            function ease(t, b, c, d) {
+                t /= d / 2;
+                if (t < 1) return c / 2 * t * t + b;
+                t--;
+                return -c / 2 * (t * (t - 2) - 1) + b;
+            }
+
+            requestAnimationFrame(animation);
+        }
+
+        function nextContainer() {
+            containers[currentContainer].classList.remove('active');
+            currentContainer = (currentContainer + 1) % containers.length;
+            containers[currentContainer].classList.add('active');
+            
+            // Scroll the next container into view with custom smooth scroll
+            smoothScroll(containers[currentContainer], 930);  // 2 seconds smooth scroll
+        }
+
+        function firstContainer() {
+            containers[currentContainer].classList.remove('active');
+            currentContainer = 0;  // Reset to the first container
+            containers[currentContainer].classList.add('active');
+            
+            // Scroll the first container into view with custom smooth scroll
+            smoothScroll(containers[currentContainer], 930);  // 2 seconds smooth scroll
+        }
+    </script>
+
+</body>
+</html>
