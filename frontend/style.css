@@ -1,62 +1,60 @@
 body {
     margin: 0;
-    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-x: hidden; 
+    font-family: monospace;
 }
-
-/* ... your other styles ... */
 
 #myVideo {
-    position: fixed; /* Stay in place */
+    position: fixed; 
     top: 0;
     left: 0;
-    width: 100%;  /* Make the video span the full width */
-    height: 100%; /* Make the video span the full height */
-    z-index: -1; /* Place video behind content */
+    width: 100%; 
+    height: 100%;
+    z-index: -1; 
 }
 
-#myButton {
-    border-radius: 10px;
-    /* Style your button */
-    background-color: #00bfff;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
+#boot {
     display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
 }
 
-/* ... other styles ... */
+#fullscreenButton {
+    margin-left: 7px;
+    margin-top: 5px;
+    border-radius: 10px;
+}
 
 #nextButton {
+    margin-left: 7px;
+    margin-top: 5px;
     border-radius: 10px;
-    background-color: #4CAF50; /* Green background */
-    border: none;
-    color: white; /* White text */
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    margin-left: 10px; /* Add some spacing between the buttons */
 }
 
 #previousButton {
+    margin-left: 7px;
+    margin-top: 5px;
     border-radius: 10px;
-    background-color: #4CAF50; /* Green background */
+}
+
+/* Style for the text overlay */
+.video-text {
     border: none;
-    color: white; /* White text */
-    padding: 15px 32px;
+    color: white; 
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    margin-left: 10px; /* Add some spacing between the buttons */
+    font-size: 30px;
+    padding: 10px;
+}  
+
+.floating-window {
+    position: fixed;
+    width: 1000px;
+    height: 1000px;
+    background-color: rgba(255, 255, 255, 0.99);
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgb(136, 0, 255);
+    cursor: move; /* Change cursor to indicate draggable */
+    z-index: 10; /* Ensure it is above the video */
 }
