@@ -3,26 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fullscreen Video with Scroll</title>
+    <title>Physic</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
     <div class="floating-window" id="floatingWindow">
-        <h2>Мета</h2>
-        <p>Проаналізувати потенціал подорожей у часі в майбутнє за допомогою таких механізмів, як релятивістські швидкості та гравітаційні поля, а також обговорити технологічні та наукові виклики, пов'язані з цим. Ця мета зосереджена на вивченні найбільш вірогідних шляхів майбутніх подорожей у часі та перешкод, які необхідно подолати.</p>
-        <button type="button" id="closeWindow" class="btn btn-outline-danger">Close</button>
+        <h1 style="text-align: center; color: white;"><b>Мета</b></h1>
+        <p style="font-size: 25px; color: white;">Проаналізувати потенціал подорожей у часі в майбутнє за допомогою таких механізмів, як релятивістські швидкості та гравітаційні поля, а також обговорити технологічні та наукові виклики, пов'язані з цим. Ця мета зосереджена на вивченні найбільш вірогідних шляхів майбутніх подорожей у часі та перешкод, які необхідно подолати.</p>
+        
+        <h1 style="text-align: center; color: white;"><b>Очікувані результати</b></h1>
+        <p style="font-size: 25px; color: white;">Дослідити теоретичну можливість подорожей у часі в минуле і майбутнє на основі принципів теорій Ейнштейна. Для цього потрібно буде провести дослідження:</p>
+        <li style=" margin-left: 20px; color: white;">
+            <p  style="font-size: 25px; color: white;">Послаблення часу: Як уповільнення часу через відносний рух і гравітацію може бути потенційно використане для подорожей у часі в майбутнє.</p>
+        </li>
+        
+        <button type="button" id="closeWindow" class="btn btn-outline-danger btn-lg">Close</button>
     </div>
     <div class="content">
         <video id="myVideo" autoplay muted loop controls>
             <source src="../src/1205(1)/1.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
+        <h1 id="videoText" class="video-text">Ми існуємо у чотиривимірному всесвіті. Три виміри - просторові: довжина, ширина і висота. Четвертий вимір - час. Теорія відносності Ейнштейна показала, що простір і час переплітаються, утворюючи простір-час. Це означає, що час - не просто окрема сутність, а радше фундаментальна частина тканини нашої реальності.</h1>
+        <br>
         <button id="fullscreenButton" type="button" class="btn btn-outline-primary btn-lg">Fullscreen</button>
         <button id="nextButton" type="button" class="btn btn-outline-success btn-lg">Next</button>
         <button id="previousButton" type="button" class="btn btn-outline-warning btn-lg">Previous</button>
 
-        <h1 id="videoText" class="video-text">123</h1>
+        <img src="../src/1205(1)/timeDilation.png" style="display: none;">
     </div>
 
     <script src="script.js"></script>
