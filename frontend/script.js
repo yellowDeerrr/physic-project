@@ -3,6 +3,7 @@ const fullscreenButton = document.getElementById("fullscreenButton");
 const nextButton = document.getElementById("nextButton");
 const previousButton = document.getElementById("previousButton");
 const videoText = document.querySelector(".video-text");
+const timeDilation = document.getElementById("timeDilation")
 
 const path = "../src/1205(1)/";
 
@@ -18,7 +19,7 @@ const videoTexts = [
     "Тут зображено викривлення простору від гравітації. І, що цікаво - локально, зміна напрямку корабля не відбулася. Викривився саме простір, а не змінився напрямок.",
     "Гравітація настільки викривляє простір, що навіть фотони, одні з найфундаментальніших частинок всесвіту, піддаються дії гравітації. І як було з попереднім прикладом, фотон для себе самого рухався по прямій",
     "Уявимо, що космонавт падає в чорну діру. Його власні години будуть такіж, як і до цього. Але зі сторони він буде сповільнуватися в часі. А для самого космонавта навпаки, зовнішній світ буде тільки пришвидшуватися у часі, через викривлення часу.",
-    "Але через силу тяжіння, так ще й, у чорній дірі, швидкість космонавта буде тільки зростати і може досягти дуже близького значення, до швидкості світла. І тут спрацьовує ефект сповільнення часу",
+    "Але через силу тяжіння, так ще й, у чорній дірі, швидкість космонавта буде тільки зростати і може досягти дуже близького значення, до швидкості світла. І тут спрацьовує ефект сповільнення часу за формулою ",
     "Ninth video's text",
     "Text for the tenth video",
     "This is the eleventh video!"
@@ -120,6 +121,12 @@ function changeVideo() {
 
     // Update the text content
     videoText.textContent = videoTexts[videoIndex];
+    if (videoIndex == 7){
+        timeDilation.style.display = "flex";
+    }else{
+        timeDilation.style.display = "none";
+    }
+
 }
 
 
